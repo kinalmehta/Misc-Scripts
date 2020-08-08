@@ -1,5 +1,6 @@
 
-sudo apt-get install -y git apt-transport-https wget software-properties-common curl gnupg-agent ca-certificates
+sudo apt-get install -y git apt-transport-https wget software-properties-common curl gnupg-agent ca-certificates libappindicator3-1
+
 
 # install sublime text
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
@@ -13,6 +14,8 @@ wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 sudo apt update
 sudo apt install -y code
+# NOTE: after the installation is complete, check the list of PPA repositories, Microsoft add a duplicate entry.
+#       open Software Sources and disable/remove the duplicate entry
 
 
 # install chrome
@@ -34,15 +37,19 @@ sudo apt upgrade -y
 
 # install zsh shell
 sudo apt install zsh -y
-sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" # "" --skip-chsh
+# sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended  # WARNING: This will not setup ohmyzsh in .zshrc file
 
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-sed -i 's#plugins=(git)#plugins=( \n git \n zsh-autosuggestions \n zsh-syntax-highlighting \n )#g' $HOME/.zshrc
+git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
+sed -i 's#plugins=(git)#plugins=( \n git \n colored-man-pages \n zsh-autosuggestions \n zsh-history-substring-search \n zsh-syntax-highlighting \n )#g' $HOME/.zshrc
 
 # git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 # sed -i 's#ZSH_THEME="robbyrussell"#ZSH_THEME="powerlevel10k/powerlevel10k"#g' $HOME/.zshrc
 
+
+# set zsh as the default shell
 chsh -s $(which zsh)
 
 
@@ -50,6 +57,9 @@ chsh -s $(which zsh)
 sudo apt install -y tmux
 [[ -a $HOME/.bashrc ]] && echo "alias tmux='tmux -u'" >> $HOME/.bashrc && echo "Successfully added \"alias tmux='tmux -u'\" to $HOME/.bashrc"
 [[ -a $HOME/.zshrc ]] && echo "alias tmux='tmux -u'" >> $HOME/.zshrc && echo "Successfully added \"alias tmux='tmux -u'\" to $HOME/.zshrc"
+
+
+# -------------------------------------
 
 
 # installing nvidia drivers
@@ -61,9 +71,11 @@ sudo apt-get update
 
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo apt-key fingerprint 0EBFCD88
+
+# NOTE: replace ```  $(lsb_release -cs) ---> focal  ```, if using mint 20 instead of ubuntu 20 derivation
 sudo add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \  # replace this line with "focal \" if using mint 20 instead of ubuntu 20 derivation
+   $(lsb_release -cs) \
    stable"
 sudo apt-get install docker-ce docker-ce-cli containerd.io -y
 sudo usermod -aG docker kinal
