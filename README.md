@@ -1,7 +1,8 @@
 # Misc-Scripts
 
 Here we store our basic os setup scripts after fresh install of the OS.
-*NOTE:* You may not be able to use this a bash script, just open the file and run the commands of the applications you require.
+
+**NOTE:** You may not be able to use this a bash script, just open the file and run the commands of the applications you require.
 
 ### 1. [linux_setup.sh](linux_setup.sh)
   - text editors (sublime text and VS Code)
