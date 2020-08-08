@@ -48,9 +48,9 @@ sed -i 's#plugins=(git)#plugins=( \n git \n colored-man-pages \n zsh-autosuggest
 # git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 # sed -i 's#ZSH_THEME="robbyrussell"#ZSH_THEME="powerlevel10k/powerlevel10k"#g' $HOME/.zshrc
 
-
 # set zsh as the default shell
 chsh -s $(which zsh)
+# IMPORTANT: REBOOT after this
 
 
 # install tmux
@@ -67,8 +67,6 @@ sudo add-apt-repository ppa:graphics-drivers/ppa
 sudo ubuntu-drivers autoinstall
 
 # Install docker
-sudo apt-get update
-
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo apt-key fingerprint 0EBFCD88
 
@@ -77,8 +75,10 @@ sudo add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
    stable"
+sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io -y
-sudo usermod -aG docker kinal
+sudo usermod -aG docker ENTER_USERNAME  # IMPORTANT to change this
+# REBOOT
 
 # nvidia docker extention
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID) # replace this line as => distribution="ubuntu20.04" if on mint 20
@@ -88,4 +88,9 @@ curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.li
 sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit
 sudo systemctl restart docker
 
+
+# VMWare Workstation
+# Download the .bundle file from https://www.vmware.com/in/products/workstation-pro/workstation-pro-evaluation.html
+# IMPORTANT: replace this👇 with the downloaded bundle file name
+sudo bash "VMware-Workstation-Full-15.5.6-16341506.x86_64.bundle"
 
