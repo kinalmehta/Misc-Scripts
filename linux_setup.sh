@@ -1,11 +1,5 @@
 
-
-# install tmux
-sudo apt install -y tmux
-[[ -a $HOME/.bashrc ]] && echo "alias tmux='tmux -u'" >> $HOME/.bashrc && echo "Successfully added \"alias tmux='tmux -u'\" to $HOME/.bashrc"
-[[ -a $HOME/.zshrc ]] && echo "alias tmux='tmux -u'" >> $HOME/.zshrc && echo "Successfully added \"alias tmux='tmux -u'\" to $HOME/.zshrc"
-
-sudo apt-get install -y apt-transport-https wget software-properties-common curl gnupg-agent ca-certificates
+sudo apt-get install -y git apt-transport-https wget software-properties-common curl gnupg-agent ca-certificates
 
 # install sublime text
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
@@ -37,9 +31,6 @@ $PREFIX/bin/conda init
 # upgrade packages
 sudo apt upgrade -y
 
-# install git
-sudo apt install git -y
-
 
 # install zsh shell
 sudo apt install zsh -y
@@ -54,6 +45,11 @@ sed -i 's#plugins=(git)#plugins=( \n git \n zsh-autosuggestions \n zsh-syntax-hi
 
 chsh -s $(which zsh)
 
+
+# install tmux
+sudo apt install -y tmux
+[[ -a $HOME/.bashrc ]] && echo "alias tmux='tmux -u'" >> $HOME/.bashrc && echo "Successfully added \"alias tmux='tmux -u'\" to $HOME/.bashrc"
+[[ -a $HOME/.zshrc ]] && echo "alias tmux='tmux -u'" >> $HOME/.zshrc && echo "Successfully added \"alias tmux='tmux -u'\" to $HOME/.zshrc"
 
 
 # installing nvidia drivers
