@@ -67,13 +67,13 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo apt-key fingerprint 0EBFCD88
 sudo add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \
+   $(lsb_release -cs) \  # replace this line with "focal \" if using mint 20 instead of ubuntu 20 derivation
    stable"
 sudo apt-get install docker-ce docker-ce-cli containerd.io -y
 sudo usermod -aG docker kinal
 
 # nvidia docker extention
-distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID) # replace this line as => distribution="ubuntu20.04" if on mint 20
 curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
 curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
 
