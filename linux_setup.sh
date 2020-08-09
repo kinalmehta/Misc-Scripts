@@ -1,5 +1,5 @@
 
-sudo apt-get install -y git apt-transport-https wget software-properties-common curl gnupg-agent ca-certificates libappindicator3-1
+sudo apt-get install -y git apt-transport-https wget software-properties-common curl gnupg-agent ca-certificates libappindicator3-1 build-essential
 
 
 # install sublime text
