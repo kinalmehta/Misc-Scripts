@@ -13,3 +13,7 @@ Here we store our basic os setup scripts after fresh install of the OS.
   - nvidia-drivers
   - docker and nvidia-docker extention
   - VMWare
+
+### 2. [bashrc_custominit.sh](bashrc_custominit.sh)
+  - This is used to define common alias and make PS1 more colorful and informative
+
