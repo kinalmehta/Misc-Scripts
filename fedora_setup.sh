@@ -1,14 +1,15 @@
 
 sudo dnf update -y
-sudo dnf upgrade --refresh
+sudo dnf upgrade --refresh -y
 
-sudo dnf groupinstall 'Development Tools'
-sudo dnf install gcc-c++
+sudo dnf groupinstall 'Development Tools' -y
+sudo dnf install gcc-c++ -y
 
 
 # installing nvidia drivers
-sudo dnf install kernel-devel
-sudo dnf install akmod-nvidia
+sudo dnf install kernel-devel -y
+sudo dnf install akmod-nvidia -y
+sudo dnf install xorg-x11-drv-nvidia-cuda -y
 sudo systemctl enable nvidia-hibernate.service nvidia-suspend.service nvidia-resume.service
 
 # setting blacklist novou and other setting mentioned in asus-linux
