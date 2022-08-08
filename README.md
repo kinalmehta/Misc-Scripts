@@ -21,3 +21,6 @@ Here we store our basic os setup scripts after fresh install of the OS.
   - PDFarranger [link](https://github.com/pdfarranger/pdfarranger)
 
 
+## Other important applications
+- https://github.com/FDH2/UxPlay
+  - to stream ipad to linux
