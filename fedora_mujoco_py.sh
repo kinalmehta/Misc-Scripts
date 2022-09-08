@@ -1,5 +1,5 @@
 sudo yum install -y make gcc-c++ mesa-libGL-devel mesa-libOSMesa-devel glfw redhat-rpm-config patchelf
-sudo yum install -y mesa-libGLU-devel mesa-libEGL-devel
+sudo yum install -y mesa-libGLU-devel mesa-libEGL-devel mesa-libGLw-devel
 
 # optional if above doesn't work
 conda install -c conda-forge gcc gxx ffmpeg
