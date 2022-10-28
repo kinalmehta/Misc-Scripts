@@ -37,6 +37,10 @@ chmod +x Miniconda3-latest-Linux-x86_64.sh
 PREFIX=$HOME/miniconda3
 $PREFIX/bin/conda init
 
+### Install latex for LaTeX-Workshop extension of VSCode
+sudo dnf install texlive-scheme-full
+sudo dnf install latexmk # use this only if above doesn't install it
+
 # Docker and nvidia-docker
 sudo dnf remove docker \
                   docker-client \
