@@ -24,3 +24,4 @@ Here we store our basic os setup scripts after fresh install of the OS.
 ## Other important applications
 - https://github.com/FDH2/UxPlay
   - to stream ipad to linux
+- https://github.com/pdfarranger/pdfarranger
