@@ -22,6 +22,15 @@ Here we store our basic os setup scripts after fresh install of the OS.
 
 
 ## Other important applications
-- https://github.com/FDH2/UxPlay
+- UxPlay: https://github.com/FDH2/UxPlay
   - to stream ipad to linux
 - https://github.com/pdfarranger/pdfarranger
+- Espanso: https://espanso.org/
+  - text expander
+- Personal Knowledge Management Apps
+  - Affine: https://affine.pro/
+  - Anytype: https://anytype.io/
+  - Logseq: https://github.com/logseq/logseq
+  - Obsidian: https://obsidian.md/
+
+
