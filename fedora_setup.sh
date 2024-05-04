@@ -60,7 +60,7 @@ sudo docker run hello-world
 sudo groupadd docker
 sudo usermod -aG docker $USER
 
-distribution=centos8 
+distribution=centos8
 curl -s -L https://nvidia.github.io/libnvidia-container/$distribution/libnvidia-container.repo | sudo tee /etc/yum.repos.d/nvidia-container-toolkit.repo
 sudo dnf clean expire-cache --refresh
 sudo dnf install -y nvidia-docker2
