@@ -26,13 +26,17 @@ Refer [bashrc_custominit.sh](./bashrc_custominit.sh)
 ## Other Important Applications
 
 - PDFarranger https://github.com/pdfarranger/pdfarranger
+- Screen Recorder
+    - VokoScreenNG: https://github.com/vkohaupt/vokoscreenNG
 - UxPlay: https://github.com/FDH2/UxPlay
     - To stream ipad to linux
-- https://github.com/pdfarranger/pdfarranger
 - Espanso: https://espanso.org/
     - Text expander
 - Personal Knowledge Management Apps
-    - Affine: https://affine.pro/
-    - Anytype: https://anytype.io/
     - Logseq: https://github.com/logseq/logseq
     - Obsidian: https://obsidian.md/
+- GTK theme
+    - WhiteSur: https://github.com/vinceliuice/WhiteSur-gtk-theme
+      ```sh
+      ./install.sh --tweaks compact --tweaks macos -c dark -l
+      ```
